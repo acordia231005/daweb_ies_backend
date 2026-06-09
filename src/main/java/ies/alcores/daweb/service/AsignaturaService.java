@@ -14,7 +14,7 @@ import java.util.Optional;
 public class AsignaturaService {
 
     @Autowired
-    private final AsignaturaRepository asignaturaRepository;
+    private AsignaturaRepository asignaturaRepository;
 
     public List<Asignatura> findAll(){
         return this.asignaturaRepository.findAll();

@@ -1,0 +1,34 @@
+databases:
+  - name: daweb-db
+    databaseName: daweb_db
+    user: daweb_user
+    plan: free
+
+services:
+  - type: web
+    name: daweb-backend
+    runtime: docker
+    rootDir: daweb_ies_backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: daweb-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: daweb-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: daweb-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: daweb-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: daweb-db
+          property: password

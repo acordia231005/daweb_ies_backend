@@ -2,4 +2,4 @@ spring:
   profiles:
     active: local
 server:
-  port: ${PORT:8081}
+  port: ${PORT:8080}
