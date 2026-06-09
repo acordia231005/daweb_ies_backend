@@ -8,6 +8,7 @@ services:
   - type: web
     name: daweb-backend
     runtime: docker
+    rootDir: .
     dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /alumno
