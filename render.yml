@@ -8,9 +8,9 @@ services:
   - type: web
     name: daweb-backend
     runtime: docker
-    rootDir: daweb_ies_backend
     dockerfilePath: ./Dockerfile
     plan: free
+    healthCheckPath: /alumno
     envVars:
       - key: DB_HOST
         fromDatabase:
